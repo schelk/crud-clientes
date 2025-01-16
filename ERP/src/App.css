@@ -1,0 +1,82 @@
+header {
+  background-color: #03191e;
+}
+
+.header-burger {
+  display: flex;
+  background-color: #03191e;
+  color: white;
+  padding: 50px;
+  height: 40px;
+  width: 240px;
+}
+
+header svg {
+  font-size: 50px;
+}
+header svg:hover {
+  cursor: pointer;
+}
+
+.logo {
+  width: 60px;
+  margin: 10px;
+}
+
+.sidenav {
+  width: 240px;
+  background-color: #03191e;
+  color: white;
+  position: absolute;
+  height: 90vh;
+  padding: 0px 20px;
+  transition: all 0.7s;
+  left: -100%;
+}
+
+.sidenav.active {
+  left: 0%;
+}
+
+ul {
+  padding: 0px;
+}
+ul li a {
+  list-style-type: none;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin: 10px;
+  align-items: center;
+}
+
+ul li a:hover,
+ul li a:active {
+  background-color: #1c343f;
+}
+
+.main {
+  height: 90vh;
+  color: black;
+  font-size: 60px;
+  display: flex;
+  transition: all ease-in-out 0.4s;
+  background-color: #c1cfda;
+}
+
+.main-adjust {
+  height: 90vh;
+  color: black;
+  font-size: 60px;
+  display: flex;
+  margin-left: 280px;
+  transition: all ease-in-out 0.4s;
+  background-color: #c1cfda;
+}
+
+ul li a svg {
+  margin-right: 10px;
+}

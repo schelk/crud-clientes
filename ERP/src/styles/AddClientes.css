@@ -1,0 +1,106 @@
+.form-title {
+  font-family: Source Code Pro;
+  font-size: 2rem;
+  text-transform: uppercase;
+  height: fit-content;
+}
+
+.form-container {
+  display: flex;
+  margin: 10px;
+  padding: 20px;
+  background-color: #03191e;
+  border-radius: 10px;
+  color: #c1cfda;
+}
+
+.general-forms {
+  background-color: #03191e;
+  border-radius: 20px;
+  color: #c1cfda;
+  margin: 0px 1.5rem;
+}
+
+.general-forms svg:hover,
+img:hover {
+  cursor: pointer;
+}
+.general-forms label {
+  margin-right: 10px;
+  font-size: 30px;
+}
+
+.general-forms input {
+  border-radius: 15px;
+  border: solid 0.06rem #bbbab7;
+  text-transform: uppercase;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 10px;
+  width: 20vw;
+  text-align: center;
+  background-color: #c1cfda;
+  color: #03191e;
+}
+
+.general-forms label svg {
+  font-size: 1.5rem;
+}
+
+.inputs-container {
+  display: flex;
+  padding: 10px;
+  margin: 10px;
+  /* border: solid 0.06rem #a9a59f; */
+  border-radius: 15px;
+  width: 25rem;
+  align-items: center;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close {
+  font-size: 2rem;
+}
+.confirm {
+  font-size: 2rem;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.clear {
+  font-size: 2rem;
+  margin-left: 5px;
+}
+
+.extra-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.form-logo {
+  width: 60px;
+}
+
+#submit-btn {
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  border: 0;
+  background-color: #0000;
+  color: #c1cfda;
+  margin-right: 15px;
+}
