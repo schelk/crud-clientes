@@ -1,26 +1,14 @@
 const express = require("express");
-const sqlite3 = require("sqlite3").verbose();
 const app = express();
-const cors = require("cors");
-const corsOptions = {
-  origin: ["http://localhost:5173"],
-};
 
-app.use(cors(corsOptions));
+const db = require("./models");
 
-// Open SQLite database (it creates the file if it doesn't exist)
-const db = new sqlite3.Database(
-  "./mydatabase.db",
-  sqlite3.OPEN_READWRITE,
-  (err) => {
-    if (err) return console.error(err.message);
-  }
-);
+//Routers
+const postRouter = require("./routes/Clientes");
+app.use("/posts", postRouter);
 
-app.get("/api", (req, res) => {
-  res.json({ fruits: ["server", "is", "working"] });
-});
-
-app.listen(8080, () => {
-  console.log("Server running at http://localhost:8080");
+db.sequelize.sync().then(() => {
+  app.listen(3001, () => {
+    console.log("server is running on http://localhost:3001");
+  });
 });

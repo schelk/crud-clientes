@@ -14,7 +14,24 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
   const [senha, setSenha] = useState("");
   const [telefone, setTelefone] = useState(0);
 
-  function handleSubmit(event) {
+  // function handleSubmit(event) {
+  //   const novoCliente = {
+  //     id: id,
+  //     nome: name,
+  //     email: email,
+  //     senha: senha,
+  //     telefone: telefone,
+  //   };
+
+  //   setCliente([...cliente, novoCliente]);
+  //   setId(id + 1);
+  //   setName("");
+  //   setEmail("");
+  //   setSenha("");
+  //   setTelefone("");
+  // }
+
+  const handleSubmit = async () => {
     const novoCliente = {
       id: id,
       nome: name,
@@ -29,7 +46,26 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
     setEmail("");
     setSenha("");
     setTelefone("");
-  }
+
+    try {
+      const response = await fetch("http://localhost:8080/submit-form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert("Form submitted sucessfully");
+      } else {
+        alert(`Error: ${data.error}`);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred while submitting the form.");
+    }
+  };
 
   function limpaCampo() {
     setName("");
@@ -38,13 +74,13 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
     setTelefone("");
   }
 
-  function validaCampo() {
-    if (name == "") {
-      const wrongName = {
-        color: "red",
-      };
-    }
-  }
+  // function validaCampo() {
+  //   if (name == "") {
+  //     const wrongName = {
+  //       color: "red",
+  //     };
+  //   }
+  // }
 
   return (
     <>
@@ -59,7 +95,6 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
           onSubmit={(event) => {
             event.preventDefault();
             handleSubmit();
-            validaCampo();
           }}
         >
           <div className="inputs-container">
