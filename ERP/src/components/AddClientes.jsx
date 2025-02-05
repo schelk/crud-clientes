@@ -46,25 +46,6 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
     setEmail("");
     setSenha("");
     setTelefone("");
-
-    try {
-      const response = await fetch("http://localhost:8080/submit-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email }),
-      });
-      const data = await response.json();
-      if (response.ok) {
-        alert("Form submitted sucessfully");
-      } else {
-        alert(`Error: ${data.error}`);
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while submitting the form.");
-    }
   };
 
   function limpaCampo() {
