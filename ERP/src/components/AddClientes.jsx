@@ -7,6 +7,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { GrClearOption } from "react-icons/gr";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
   const [name, setName] = useState("");
@@ -14,31 +15,17 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
   const [senha, setSenha] = useState("");
   const [telefone, setTelefone] = useState(0);
 
-  // function handleSubmit(event) {
-  //   const novoCliente = {
-  //     id: id,
-  //     nome: name,
-  //     email: email,
-  //     senha: senha,
-  //     telefone: telefone,
-  //   };
-
-  //   setCliente([...cliente, novoCliente]);
-  //   setId(id + 1);
-  //   setName("");
-  //   setEmail("");
-  //   setSenha("");
-  //   setTelefone("");
-  // }
-
-  const handleSubmit = async () => {
+  //função para submit formulario cliente
+  const handleSubmit = () => {
     const novoCliente = {
-      id: id,
-      nome: name,
+      Nome: name,
       email: email,
-      senha: senha,
-      telefone: telefone,
+      Telefone: telefone,
     };
+
+    axios.post("http://localhost:3001/clientes", novoCliente).then(() => {
+      alert("Cliente cadastrado com sucesso!");
+    });
 
     setCliente([...cliente, novoCliente]);
     setId(id + 1);
@@ -47,21 +34,16 @@ const AddClientes = ({ modal, cliente, setCliente, id, setId }) => {
     setSenha("");
     setTelefone("");
   };
+  //
 
+  //função para limpar campos
   function limpaCampo() {
     setName("");
     setEmail("");
     setSenha("");
     setTelefone("");
   }
-
-  // function validaCampo() {
-  //   if (name == "") {
-  //     const wrongName = {
-  //       color: "red",
-  //     };
-  //   }
-  // }
+  //
 
   return (
     <>

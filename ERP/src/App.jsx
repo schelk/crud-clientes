@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Clientes from "./pages/Clientes";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./index.css";
 import "./App.css";
 import { useState } from "react";
 

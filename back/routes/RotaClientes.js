@@ -13,6 +13,23 @@ router.post("/", async (req, res) => {
   res.json(post);
 });
 
+router.delete("/:id", async (req, res) => {
+  try {
+    const clienteId = req.params.id;
+
+    const cliente = await Clientes.findByPk(clienteId);
+
+    if (!cliente) {
+      res.status(404).send("Cliente não encontrado");
+    }
+
+    await cliente.destroy();
+    res.status(204).json({ message: "Cliente deletado com sucesso" });
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // Testando o post (nesse momento estava utilizando insomnia para testes)
 // router.post("/", async (req, res) => {
 //   const post = req.body;

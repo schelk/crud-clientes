@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import "../styles/home.css";
+import UltimoCliente from "../components/UltimoCliente";
 
 const Home = () => {
-  //
-  useEffect(() => {
-    axios.get("http://localhost:3001/posts").then((response) => {
-      console.log(response);
-    });
-  }, []);
-
-  return <div></div>;
+  return (
+    <div>
+      <UltimoCliente />
+    </div>
+  );
 };
 
 export default Home;

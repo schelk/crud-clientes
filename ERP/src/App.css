@@ -1,3 +1,7 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 header {
   background-color: #03191e;
 }
@@ -28,7 +32,7 @@ header svg:hover {
   background-color: #03191e;
   color: white;
   position: absolute;
-  height: 90vh;
+  height: 100vh;
   padding: 0px 20px;
   transition: all 0.7s;
   left: -100%;
@@ -40,6 +44,7 @@ header svg:hover {
 
 ul {
   padding: 0px;
+  list-style: none;
 }
 ul li a {
   list-style-type: none;
@@ -79,4 +84,8 @@ ul li a:active {
 
 ul li a svg {
   margin-right: 10px;
+}
+
+html {
+  background-color: #c1cfda;
 }

@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
-
 html,
 body,
 div,
@@ -84,9 +82,9 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
+  font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  font-family: Source Code Pro;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -123,8 +121,4 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-body {
-  background-color: #c1cfda;
 }
